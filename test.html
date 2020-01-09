@@ -9,20 +9,22 @@
 <body>
 </body>
 <script src="jquery-1.7.2.js"></script>
-
-
 <script src="mobile-detect.js"></script>
 <script>
+
+
     var canvas = document.createElement('canvas');
-    var gl = canvas.getContext('webgl');  // 等同于 canvas.getContext('experimental-webgl');
+      var gl = canvas.getContext('webgl');  // 等同于 canvas.getContext('experimental-webgl');
 
     var debugInfo = gl.getExtension('WEBGL_debug_renderer_info');
 
+
+
     console.log( gl.getParameter(debugInfo.UNMASKED_VENDOR_WEBGL) );
     // GPU 制造商，e.g., Intel Inc.
-    alert(gl.getParameter(debugInfo.UNMASKED_VENDOR_WEBGL) )
-    console.log( "gpux"+gl.getParameter(debugInfo.UNMASKED_RENDERER_WEBGL) );
-    alert("gpux"+gl.getParameter(debugInfo.UNMASKED_RENDERER_WEBGL))
+    // alert(gl.getParameter(debugInfo.UNMASKED_VENDOR_WEBGL) )
+     //console.log( "gpux"+gl.getParameter(debugInfo.UNMASKED_RENDERER_WEBGL) );
+     document.write("gpu  "+gl.getParameter(debugInfo.UNMASKED_RENDERER_WEBGL)+"\n--------"+"\n")
     // GPU 型号，e.g., Intel Iris OpenGL Engine
     //判断数组中是否包含某字符串
     Array.prototype.contains = function(needle) {
@@ -49,8 +51,8 @@
             model = sss[i].substring(0, sss[i].indexOf("Build/"));
         }
     }
-    alert(os + "---" + model);//打印系统版本和手机型号
-  alert(getPhoneType());
+    //alert(os + "---" + model);//打印系统版本和手机型号
+  //alert(getPhoneType());
     function getPhoneType(){
 //正则,忽略大小写
         var pattern_phone = new RegExp("iphone","i");
