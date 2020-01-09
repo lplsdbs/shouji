@@ -686,6 +686,9 @@ define(function () {
      * @constructor
      * @global
      */
+
+
+
     function MobileDetect(userAgent, maxPhoneWidth) {
         this.ua = prepareUserAgent(userAgent);
         this._cache = {};
